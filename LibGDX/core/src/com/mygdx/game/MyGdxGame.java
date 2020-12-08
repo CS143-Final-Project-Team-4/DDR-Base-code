@@ -46,6 +46,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	float timeElapsed = 0;
 	private int score = 0;
 	private int total = 0;
+	private Sound bgMusic; //background music for menu;
 	
     
 	@Override
@@ -59,7 +60,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		blueTest = new Texture("blueTest.png");
 		arrowTest = new Texture("arrowTest.png");
 				
-		
+		bgMusic = Gdx.audio.newSound(Gdx.files.internal("sound/menu-bg-music.mp3"));
 		
 		
 		
@@ -126,6 +127,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		
 		skyfallArray = new Array<Rectangle>();
+		
+		bgMusic.play();
+		
 		spawnSkyfall();
 	}
 	
